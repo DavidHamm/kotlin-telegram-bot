@@ -18,6 +18,7 @@ class SendChatActionIT : ApiClientIT() {
 
         sut.sendChatAction(
             chatId = ChatId.fromId(ANY_CHAT_ID),
+            messageThreadId = null,
             action = ChatAction.CHOOSE_STICKER,
         )
 
@@ -32,6 +33,7 @@ class SendChatActionIT : ApiClientIT() {
 
         val sendChatActionResult = sut.sendChatAction(
             chatId = ChatId.fromId(ANY_CHAT_ID),
+            messageThreadId = null,
             action = ChatAction.CHOOSE_STICKER,
         ).get()
 
@@ -44,6 +46,7 @@ class SendChatActionIT : ApiClientIT() {
 
         val sendChatActionResult = sut.sendChatAction(
             chatId = ChatId.fromId(ANY_CHAT_ID),
+            messageThreadId = null,
             action = ChatAction.CHOOSE_STICKER,
         ).get()
 

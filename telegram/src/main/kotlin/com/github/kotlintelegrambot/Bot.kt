@@ -1268,13 +1268,14 @@ class Bot private constructor(
      *
      * @param chatId Unique identifier for the target chat or username of the target channel (in
      * the format @channelusername).
+     * @param messageThreadId Optional. Unique identifier for the target message thread of the chat.
      * @param action Type of [ChatAction] to broadcast. Choose one depending on what the user is
      * about to receive.
      *
      * @return True on success.
      */
-    fun sendChatAction(chatId: ChatId, action: ChatAction): TelegramBotResult<Boolean> =
-        apiClient.sendChatAction(chatId, action)
+    fun sendChatAction(chatId: ChatId, messageThreadId: Long? = null, action: ChatAction): TelegramBotResult<Boolean> =
+        apiClient.sendChatAction(chatId, messageThreadId, action)
 
     fun getUserProfilePhotos(userId: Long, offset: Long? = null, limit: Int? = null) =
         apiClient.getUserProfilePhotos(userId, offset, limit).call()

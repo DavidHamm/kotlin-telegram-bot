@@ -480,6 +480,7 @@ internal interface ApiService {
     @POST("sendChatAction")
     fun sendChatAction(
         @Field(ApiConstants.CHAT_ID) chatId: ChatId,
+        @Field(ApiConstants.MESSAGE_THREAD_ID) messageThreadId: Long?,
         @Field("action") action: ChatAction,
     ): Call<Response<Boolean>>
 
