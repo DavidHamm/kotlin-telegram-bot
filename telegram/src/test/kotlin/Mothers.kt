@@ -330,10 +330,12 @@ fun anyInvoice(
 
 private const val ANY_USER_ID = 325235L
 private const val IS_BOT = true
+private const val IS_PREMIUM = false
 
 fun anyUser(
     userId: Long = ANY_USER_ID,
     isBot: Boolean = IS_BOT,
+    isPremium: Boolean = IS_PREMIUM,
     firstName: String = ANY_FIRST_NAME,
     lastName: String? = null,
     username: String? = null,
@@ -341,6 +343,7 @@ fun anyUser(
 ): User = User(
     id = userId,
     isBot = isBot,
+    isPremium = isPremium,
     firstName = firstName,
     lastName = lastName,
     username = username,
